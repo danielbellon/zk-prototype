@@ -1,0 +1,61 @@
+body {
+    padding: 0 !important;
+}
+
+.z-navbar {
+    padding: 0;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.z-navbar ul {
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 16px;
+    padding-bottom: 0;
+}
+
+.z-navitem {
+    vertical-align: bottom;
+}
+
+.z-navbar ul, .z-navbar .z-navitem-selected .z-navitem-content {
+    background: #a6c307;
+    color: white;
+}
+
+.z-navitem-content {
+    color: white;
+    height: auto;
+    padding-bottom: 16px;
+}
+
+.z-navbar-horizontal li {
+    margin: 0;
+    margin-right: 16px !important;
+    min-width: auto;
+}
+
+.z-navitem i {
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    margin-right: 8px;
+}
+
+.z-navitem-content:hover {
+    color: #377322;
+}
+
+.z-navbar-horizontal .z-navitem-selected {
+    border-bottom: 2px solid #377322 !important;
+}
+
+.z-navbar-horizontal .z-navitem-selected .z-navitem-content {
+    color: #377322 !important;
+}
+
+.view-content {
+    padding: 64px;
+}
