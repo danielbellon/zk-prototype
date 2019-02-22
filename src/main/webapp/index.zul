@@ -1,55 +1,42 @@
+<?link rel="shortcut icon" type="image/x-icon" href="https://www.payulatam.com/co/wp-content/uploads/sites/2/2017/02/favicon.png"?>
+<?link rel="icon" type="image/x-icon" href="https://www.payulatam.com/co/wp-content/uploads/sites/2/2017/02/favicon.png"?>
 <?link rel="stylesheet" type="text/css" href="/style.css"?>
+
 <zk>
-	<borderlayout hflex="1" vflex="1">
-		<north vflex="min" border="none" >
-			<apply templateURI="/chapter1/banner.zul"/>
-		</north>
-		<center id="mainContent" autoscroll="true">
-			<vbox vflex="1" hflex="1" align="center" spacing="20px"  sclass="demo-main">
-				<label value="Welcome to ZK Essentials" sclass="head1"/>
-				<label value="Chapter 1" sclass="head2"/>
-				<hlayout>
-					<a href="/chapter1/">Demo</a>
-				</hlayout>
-				
-				<label value="Chapter 2" sclass="head2"/>
-				<hlayout>
-					<a href="/chapter2/index-zscript.zul">ZScript</a>
-					<a href="/chapter2/index.zul">Java</a>
-				</hlayout>
-				
-				<label value="Chapter 3" sclass="head2"/>
-				<hlayout>
-					<a href="/chapter3/index.zul">MVC</a>
-					<a href="/chapter3/index-mvvm.zul">MVVM</a>
-				</hlayout>
-				
-				<label value="Chapter 4" sclass="head2"/>
-				<hlayout>
-					<a href="/chapter4/index.zul">MVC</a>
-					<a href="/chapter4/index-mvvm.zul">MVVM</a>
-				</hlayout>
-				<label value="Chapter 5" sclass="head2"/>
-				<hlayout>
-					<a href="/chapter5/index.zul">MVVM</a>
-				</hlayout>
-				
-				<label value="Chapter 6" sclass="head2"/>
-				<vlayout>
-					<a href="/chapter6/pagebased/index.zul">Page-based</a>
-					<a href="/chapter6/ajaxbased/index.zul">AJAX-based MVC</a>
-					<a href="/chapter6/ajaxbased_mvvm/index.zul">AJAX-based MVVM</a>
-				</vlayout>
-				
-				<label value="Chapter 7" sclass="head2"/>
-				<hlayout>
-					<a href="/chapter7/index.zul">Demo</a>
-				</hlayout>
-				
-			</vbox>
-		</center>
-		<south vflex="min" border="none">
-			<apply templateURI="/chapter1/footer.zul"/>
-		</south>
-	</borderlayout>
+    <div id="container"
+         sclass="vertical"
+         viewModel="@id('vm') @init('com.payulatam.prototype.view.model.MenuViewModel')">
+
+        <!-- ******************************************************************************************************* -->
+        <!-- Navigation menu -->
+        <!-- ******************************************************************************************************* -->
+
+        <!-- Menu component -->
+        <navbar id="navbar" orient="horizontal" collapsed="false" onSelect="@command('navigate')">
+            <apply template="iterate" menuItems="@ref(vm.menuNodes)"/>
+        </navbar>
+
+        <!-- Iteration template -->
+        <template name="iterate">
+            <forEach items="@load(menuItems)">
+                <apply template="menu" menuItem="@ref(each)"/>
+            </forEach>
+        </template>
+
+        <!-- Menu Item template -->
+        <template name="menu">
+            <nav label="@load(menuItem.label)" iconSclass="@load(menuItem.iconSclass)">
+                <apply template="iterate" menuItems="@ref(menuItem.subMenus)"/>
+            </nav>
+        </template>
+
+        <!-- ******************************************************************************************************* -->
+        <!-- Content -->
+        <!-- ******************************************************************************************************* -->
+
+        <div sclass="view-content">
+            <label value="@load(vm.currentPage)"/>
+        </div>
+
+    </div>
 </zk>
