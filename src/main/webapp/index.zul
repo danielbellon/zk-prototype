@@ -25,9 +25,7 @@
 
         <!-- Menu Item template -->
         <template name="menu">
-            <nav label="@load(menuItem.label)" iconSclass="@load(menuItem.iconSclass)">
-                <apply template="iterate" menuItems="@ref(menuItem.subMenus)"/>
-            </nav>
+            <navitem label="@load(menuItem.label)" iconSclass="@load(menuItem.iconSclass)"/>
         </template>
 
         <!-- ******************************************************************************************************* -->
