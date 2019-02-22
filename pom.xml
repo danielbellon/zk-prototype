@@ -1,9 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- *********************************************************************************************************** -->
+	<!-- Project metadata -->
+	<!-- *********************************************************************************************************** -->
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zkoss</groupId>
-	<artifactId>zkessentials</artifactId>
+	<artifactId>zk-prototype</artifactId>
 	<version>1.0.0</version>
+	<packaging>war</packaging>
+
+	<!-- *********************************************************************************************************** -->
+	<!-- Project properties -->
+	<!-- *********************************************************************************************************** -->
+
 	<properties>
 		<zk.version>8.5.0-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
@@ -11,9 +22,11 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
-	<packaging>war</packaging>
-	<name>The ZK Essentials Example Project</name>
-	<description>The ZK Essentials Example Application</description>
+
+	<!-- *********************************************************************************************************** -->
+	<!-- Project licenses -->
+	<!-- *********************************************************************************************************** -->
+
 	<licenses>
 		<license>
 			<name>GNU LESSER GENERAL PUBLIC LICENSE, Version 3</name>
@@ -21,6 +34,11 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<!-- *********************************************************************************************************** -->
+	<!-- Project repositories -->
+	<!-- *********************************************************************************************************** -->
+
 	<repositories>
 		<repository>
 			<id>ZK CE</id>
@@ -33,6 +51,7 @@
 			<url>http://mavensync.zkoss.org/eval</url>
 		</repository>
 	</repositories>
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>zkmaven</id>
@@ -40,6 +59,11 @@
 			<url>http://mavensync.zkoss.org/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<!-- *********************************************************************************************************** -->
+	<!-- Project dependencies -->
+	<!-- *********************************************************************************************************** -->
+
 	<dependencies>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
@@ -56,12 +80,12 @@
 			<artifactId>zuti</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.zkoss.theme</groupId>
-			<artifactId>breeze</artifactId>
-			<version>${zk.version}</version>
-		</dependency>
 	</dependencies>
+
+	<!-- *********************************************************************************************************** -->
+	<!-- Project construction -->
+	<!-- *********************************************************************************************************** -->
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
@@ -83,7 +107,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<scm>
-		<url>https://github.com/zkoss/zkessentials</url>
-	</scm>
+
 </project>
