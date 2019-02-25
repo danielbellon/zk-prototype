@@ -1,0 +1,7 @@
+<div sclass="view-content">
+    <vbox>
+        <image sclass="home-logo" src="/img/logo.png" width="200px"/>
+        <label sclass="bold-text">Aplicación Prototipo</label>
+        <label sclass="italic-text">Daniel Felipe Bellón Cely</label>
+    </vbox>
+</div>

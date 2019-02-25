@@ -101,7 +101,7 @@ public class MenuViewModel {
 		
 	}
 	
-	@Command @SmartNotifyChange("currentPage")
+	@Command @SmartNotifyChange("currentViewTemplate")
 	public void navigate(@ContextParam(ContextType.TRIGGER_EVENT) SelectEvent<Navitem, Object> event){
 		currentPage = event.getSelectedItems().iterator().next().getLabel();
 	}

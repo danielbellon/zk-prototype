@@ -59,3 +59,22 @@ body {
 .view-content {
     padding: 64px;
 }
+
+.title {
+    font-weight: bold;
+    font-size: 32px;
+    color: #a6c307;
+}
+
+.home-logo {
+    margin-bottom: 16px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.italic-text {
+    font-size: 14px;
+    font-style: italic;
+}
