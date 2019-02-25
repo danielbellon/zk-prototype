@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class MenuViewModel {
+public class IndexViewModel {
 
     // -----------------------------------------------------------------------------------------------------------------
     // View Attributes
@@ -35,11 +35,11 @@ public class MenuViewModel {
     @Init
     public void init() {
         menuItems = Arrays.asList(
-                new MenuItem("Inicio", "z-icon-home", "/view/home.zul"),
-                new MenuItem("Clientes", "z-icon-group", "/view/clients.zul"),
-                new MenuItem("Cuentas", "z-icon-credit-card", "/view/accounts.zul"),
-                new MenuItem("Movimientos", "z-icon-dollar", "/view/movements.zul"),
-                new MenuItem("Reportes", "z-icon-bar-chart-o", "/view/reports.zul")
+                new MenuItem("Inicio", "z-icon-home", "/view/home/home.zul"),
+                new MenuItem("Clientes", "z-icon-group", "/view/clients/clients.zul"),
+                new MenuItem("Cuentas", "z-icon-credit-card", "/view/accounts/accounts.zul"),
+                new MenuItem("Movimientos", "z-icon-dollar", "/view/movements/movements.zul"),
+                new MenuItem("Reportes", "z-icon-bar-chart-o", "/view/reports/reports.zul")
         );
     }
 
@@ -54,7 +54,6 @@ public class MenuViewModel {
     @SmartNotifyChange("currentViewTemplate")
     public void navigate(@ContextParam(ContextType.TRIGGER_EVENT) SelectEvent<Navitem, Object> event) {
         String currentViewLabel = event.getSelectedItems().iterator().next().getLabel();
-
         try {
             currentViewTemplate = findCurrentViewTemplate(currentViewLabel);
         } catch (IllegalTemplateException e) {

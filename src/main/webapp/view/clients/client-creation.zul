@@ -1,0 +1,42 @@
+<window viewModel="@id('vm') @init('com.payulatam.prototype.view.model.clients.ClientCreationViewModel')"
+        id="modal"
+        title="Crear cliente"
+        width="460px"
+        position="center, center"
+        action="show: slideDown({duration: 500}); hide: slideUp({ duration: 500})">
+
+    <vlayout>
+
+        <!-- ******************************************************************************************************* -->
+        <!-- Form section -->
+        <!-- ******************************************************************************************************* -->
+
+        <div sclass="crud-form">
+            <hlayout>
+                <label>Nombre: </label>
+                <textbox id="name"/>
+            </hlayout>
+
+            <hlayout>
+                <label>Dirección: </label>
+                <textbox id="address"/>
+            </hlayout>
+
+            <hlayout>
+                <label>Telefono: </label>
+                <textbox id="phone"/>
+            </hlayout>
+        </div>
+
+        <!-- ******************************************************************************************************* -->
+        <!-- Actions section -->
+        <!-- ******************************************************************************************************* -->
+
+        <hlayout sclass="crud-actions">
+            <button label="Crear" iconSclass="z-icon-save"/>
+            <button label="Cancelar" iconSclass="z-icon-times" onClick="@command('closeWindow')"/>
+        </hlayout>
+
+    </vlayout>
+
+</window>

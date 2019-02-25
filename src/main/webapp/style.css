@@ -115,3 +115,41 @@ body {
 .z-listbox-header-border {
   border-bottom: none !important;
 }
+
+.crud-form .z-hlayout .z-hlayout-inner:first-child {
+    width: 100px;
+}
+
+.crud-form .z-hlayout {
+    margin-top: 8px;
+}
+
+.crud-form input {
+  width: 296px;
+}
+
+.crud-form span {
+  line-height: 34px;
+}
+
+.crud-actions {
+    margin-top: 16px;
+    text-align: right;
+}
+
+.crud-actions button{
+    width: 145.5px;
+}
+
+.z-window {
+    background: white;
+}
+
+.z-textbox:focus, .z-decimalbox:focus, .z-intbox:focus, .z-longbox:focus, .z-doublebox:focus {
+    border-color: #a6c307;
+}
+
+.z-window-header {
+    color: #9cbd0c;
+    font-size: 20px;
+}

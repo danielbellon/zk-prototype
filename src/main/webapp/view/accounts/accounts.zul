@@ -1,10 +1,10 @@
-<div sclass="view-content" viewModel="@id('vm') @init('com.payulatam.prototype.view.model.ClientsViewModel')">
+<div sclass="view-content" viewModel="@id('vm') @init('com.payulatam.prototype.view.model.accounts.AccountsViewModel')">
 
     <!-- *********************************************************************************************************** -->
     <!-- View title -->
     <!-- *********************************************************************************************************** -->
 
-    <label sclass="title">Administración de clientes</label>
+    <label sclass="title">Administración de cuentas</label>
 
     <!-- *********************************************************************************************************** -->
     <!-- View Actions -->
@@ -12,8 +12,8 @@
 
     <div sclass="actions-section">
         <hbox>
-            <button label="Crear cliente" iconSclass="z-icon-plus"/>
-            <button label="Buscar clientes" iconSclass="z-icon-search"/>
+            <button label="Crear cuenta" iconSclass="z-icon-plus" onClick="@command('showCreationModal')"/>
+            <button label="Buscar cuentas" iconSclass="z-icon-search"/>
             <button label="Borrar selecciones" iconSclass="z-icon-trash-o"/>
         </hbox>
     </div>
@@ -23,19 +23,19 @@
     <!-- *********************************************************************************************************** -->
 
     <div sclass="view-table">
-        <listbox model="@load(vm.clientsList)" emptyMessage="De momento no tienes ningún cliente registrado">
+        <listbox model="@load(vm.accountsList)" emptyMessage="De momento no tienes ningúna cuenta registrado">
             <!-- Table header -->
             <listhead>
-                <listheader label="Nombre"/>
-                <listheader label="Dirección"/>
-                <listheader label="Telefono"/>
+                <listheader label="Número de cuenta"/>
+                <listheader label="Saldo"/>
+                <listheader label="Cliente"/>
             </listhead>
             <!-- Table data -->
             <template name="model">
                 <listitem>
-                    <listcell label="@init(each.name)"/>
-                    <listcell label="@init(each.address)"/>
-                    <listcell label="@init(each.phone)"/>
+                    <listcell label="@init(each.number)"/>
+                    <listcell label="@init(each.balance)"/>
+                    <listcell label="@init(each.client.name)"/>
                 </listitem>
             </template>
         </listbox>

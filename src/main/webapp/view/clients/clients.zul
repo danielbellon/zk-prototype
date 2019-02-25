@@ -1,4 +1,4 @@
-<div sclass="view-content" viewModel="@id('vm') @init('com.payulatam.prototype.view.model.AccountsViewModel')">
+<div sclass="view-content" viewModel="@id('vm') @init('com.payulatam.prototype.view.model.clients.ClientsViewModel')">
 
     <!-- *********************************************************************************************************** -->
     <!-- View title -->
@@ -12,8 +12,8 @@
 
     <div sclass="actions-section">
         <hbox>
-            <button label="Crear cuenta" iconSclass="z-icon-plus"/>
-            <button label="Buscar cuentas" iconSclass="z-icon-search"/>
+            <button label="Crear cliente" iconSclass="z-icon-plus" onClick="@command('showCreationModal')"/>
+            <button label="Buscar clientes" iconSclass="z-icon-search"/>
             <button label="Borrar selecciones" iconSclass="z-icon-trash-o"/>
         </hbox>
     </div>
@@ -23,19 +23,19 @@
     <!-- *********************************************************************************************************** -->
 
     <div sclass="view-table">
-        <listbox model="@load(vm.accountsList)" emptyMessage="De momento no tienes ningúna cuenta registrado">
+        <listbox model="@load(vm.clientsList)" emptyMessage="De momento no tienes ningún cliente registrado">
             <!-- Table header -->
             <listhead>
-                <listheader label="Número de cuenta"/>
-                <listheader label="Saldo"/>
-                <listheader label="Cliente"/>
+                <listheader label="Nombre"/>
+                <listheader label="Dirección"/>
+                <listheader label="Telefono"/>
             </listhead>
             <!-- Table data -->
             <template name="model">
                 <listitem>
-                    <listcell label="@init(each.number)"/>
-                    <listcell label="@init(each.balance)"/>
-                    <listcell label="@init(each.client.name)"/>
+                    <listcell label="@init(each.name)"/>
+                    <listcell label="@init(each.address)"/>
+                    <listcell label="@init(each.phone)"/>
                 </listitem>
             </template>
         </listbox>

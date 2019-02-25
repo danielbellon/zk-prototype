@@ -5,7 +5,7 @@
 <zk>
     <div id="container"
          sclass="vertical"
-         viewModel="@id('vm') @init('com.payulatam.prototype.view.model.MenuViewModel')">
+         viewModel="@id('vm') @init('com.payulatam.prototype.view.model.IndexViewModel')">
 
         <!-- ******************************************************************************************************* -->
         <!-- Navigation menu -->
