@@ -78,3 +78,40 @@ body {
     font-size: 14px;
     font-style: italic;
 }
+
+
+.actions-section {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    height: 40px;
+}
+
+.actions-section table{
+    float: right;
+}
+
+.z-button {
+    background: #377322;
+}
+
+.z-button:hover, .z-button:active, .z-button:focus {
+    background-color: #57a53c;
+}
+
+.z-button i {
+    color: #a6c307;
+}
+
+.z-listbox-header {
+  background: #a6c307;
+}
+
+.z-listbox-header .z-listheader {
+  border-left: none;
+  border-bottom: none;
+  background: inherit;
+}
+
+.z-listbox-header-border {
+  border-bottom: none !important;
+}

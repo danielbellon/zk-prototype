@@ -11,6 +11,9 @@ import org.zkoss.zkmax.zul.Navitem;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *
+ */
 @Getter
 @Setter
 public class MenuViewModel {
@@ -26,6 +29,9 @@ public class MenuViewModel {
     // View Initialization
     // -----------------------------------------------------------------------------------------------------------------
 
+    /**
+     *
+     */
     @Init
     public void init() {
         menuItems = Arrays.asList(

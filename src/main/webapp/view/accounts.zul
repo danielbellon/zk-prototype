@@ -1,3 +1,44 @@
-<div sclass="view-content">
-    <label sclass="title">Cuentas</label>
+<div sclass="view-content" viewModel="@id('vm') @init('com.payulatam.prototype.view.model.AccountsViewModel')">
+
+    <!-- *********************************************************************************************************** -->
+    <!-- View title -->
+    <!-- *********************************************************************************************************** -->
+
+    <label sclass="title">Administración de clientes</label>
+
+    <!-- *********************************************************************************************************** -->
+    <!-- View Actions -->
+    <!-- *********************************************************************************************************** -->
+
+    <div sclass="actions-section">
+        <hbox>
+            <button label="Crear cuenta" iconSclass="z-icon-plus"/>
+            <button label="Buscar cuentas" iconSclass="z-icon-search"/>
+            <button label="Borrar selecciones" iconSclass="z-icon-trash-o"/>
+        </hbox>
+    </div>
+
+    <!-- *********************************************************************************************************** -->
+    <!-- View Data -->
+    <!-- *********************************************************************************************************** -->
+
+    <div sclass="view-table">
+        <listbox model="@load(vm.accountsList)" emptyMessage="De momento no tienes ningúna cuenta registrado">
+            <!-- Table header -->
+            <listhead>
+                <listheader label="Número de cuenta"/>
+                <listheader label="Saldo"/>
+                <listheader label="Cliente"/>
+            </listhead>
+            <!-- Table data -->
+            <template name="model">
+                <listitem>
+                    <listcell label="@init(each.number)"/>
+                    <listcell label="@init(each.balance)"/>
+                    <listcell label="@init(each.client.name)"/>
+                </listitem>
+            </template>
+        </listbox>
+    </div>
+
 </div>
